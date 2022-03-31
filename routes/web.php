@@ -19,6 +19,10 @@ Route::get('/sobrenos', [\App\Http\Controllers\SobreNosController::class,'sobren
 
 Route::get('/contato', [\App\Http\Controllers\ContatoController::class,'contato']);
 
+Route::get('/clientes', [\App\Http\Controllers\ClientesController::class,'clientes']);
+
+Route::get('/clientes', [\App\Http\Controllers\ClientesController::class,'clientes']);
+
 // define quantos parâmetros forem necessários para a rota
 Route::get('/contato/{nome}/{categoria_id}', function (string $nome, int $categoria_id=1){
     echo 'estamos aqui '.$nome .' categoria '. $categoria_id;
