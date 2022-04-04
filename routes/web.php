@@ -39,6 +39,12 @@ Route::get('/rota2', function(){
     return redirect()->route('site.rota1');
 })->name('site.rota2');
 
+
+// rota de contingência, caso erre a rota monta uma padrão
+Route::fallback(function(){
+    echo 'a rota acessada não existe. <a href="'.route('site.index').'">Clique aqui</a> para ira para a página inicial.' ;
+});
+
 // Route::redirect('/rota2', 'rota1');
 
 // define quantos parâmetros forem necessários para a rota
