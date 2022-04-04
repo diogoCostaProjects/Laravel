@@ -19,16 +19,33 @@ Route::get('/sobrenos', [\App\Http\Controllers\SobreNosController::class,'sobren
 
 Route::get('/contato', [\App\Http\Controllers\ContatoController::class,'contato']);
 
-Route::get('/clientes', [\App\Http\Controllers\ClientesController::class,'clientes']);
+// prefixo para encapsular rotas
+Route::prefix('/app')->group(function() {
+    Route::get('/login', function(){
+        return 'login';
+    });
+    
+    Route::get('/clientes', function(){
+        return 'clientes';
+    });
+    
+    Route::get('/fornecedores', function(){
+        return 'fornecedores';
+    });
+    
+    Route::get('/produtos', function(){
+        return 'produtos';
+    });
+});
 
-Route::get('/clientes', [\App\Http\Controllers\ClientesController::class,'clientes']);
+
 
 // define quantos parâmetros forem necessários para a rota
-Route::get('/contato/{nome}/{categoria_id}', function (string $nome, int $categoria_id=1){
-    echo 'estamos aqui '.$nome .' categoria '. $categoria_id;
-})
-->where('categoria_id', '[0-9]+')
-->where('nome', '[A-Za-z]+'); 
+// Route::get('/contato/{nome}/{categoria_id}', function (string $nome, int $categoria_id=1){
+//     echo 'estamos aqui '.$nome .' categoria '. $categoria_id;
+// })
+// ->where('categoria_id', '[0-9]+')
+// ->where('nome', '[A-Za-z]+'); 
 // tratando a rota com expressões regulares para que não gere mais o erro de tipo de variável, mas sim o erro de rota não encontrada
 
 
