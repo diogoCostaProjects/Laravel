@@ -13,29 +13,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\PrincipalController::class,'principal']);
+Route::get('/', [\App\Http\Controllers\PrincipalController::class,'principal'])->name('site.index');
 
-Route::get('/sobrenos', [\App\Http\Controllers\SobreNosController::class,'sobrenos']);
+Route::get('/sobrenos', [\App\Http\Controllers\SobreNosController::class,'sobrenos'])->name('site.sobrenos');
 
-Route::get('/contato', [\App\Http\Controllers\ContatoController::class,'contato']);
+Route::get('/contato', [\App\Http\Controllers\ContatoController::class,'contato'])->name('site.contato');
+
+Route::get('/login', function(){
+    return 'login';
+});
 
 // prefixo para encapsular rotas
 Route::prefix('/app')->group(function() {
-    Route::get('/login', function(){
-        return 'login';
-    });
+       
+    Route::get('/clientes', function(){return 'clientes'; })->name('app.clientes');
     
-    Route::get('/clientes', function(){
-        return 'clientes';
-    });
+    Route::get('/fornecedores', function(){ return 'fornecedores';})->name('app.fornecedores');
     
-    Route::get('/fornecedores', function(){
-        return 'fornecedores';
-    });
-    
-    Route::get('/produtos', function(){
-        return 'produtos';
-    });
+    Route::get('/produtos', function(){ return 'produtos'; })->name('app.produtos');
 });
 
 
