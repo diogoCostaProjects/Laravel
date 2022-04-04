@@ -19,9 +19,7 @@ Route::get('/sobrenos', [\App\Http\Controllers\SobreNosController::class,'sobren
 
 Route::get('/contato', [\App\Http\Controllers\ContatoController::class,'contato'])->name('site.contato');
 
-Route::get('/login', function(){
-    return 'login';
-});
+Route::get('/login', function(){ return 'login'; });
 
 // prefixo para encapsular rotas
 Route::prefix('/app')->group(function() {
@@ -33,7 +31,15 @@ Route::prefix('/app')->group(function() {
     Route::get('/produtos', function(){ return 'produtos'; })->name('app.produtos');
 });
 
+Route::get('/rota1', function(){ 
+    echo 'rota1'; 
+})->name('site.rota1');
 
+Route::get('/rota2', function(){ 
+    return redirect()->route('site.rota1');
+})->name('site.rota2');
+
+// Route::redirect('/rota2', 'rota1');
 
 // define quantos parâmetros forem necessários para a rota
 // Route::get('/contato/{nome}/{categoria_id}', function (string $nome, int $categoria_id=1){
