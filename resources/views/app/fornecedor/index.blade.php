@@ -9,6 +9,10 @@
         Cnpj: {{$fornecedores[0]['cnpj']}}
    @endisset
 @endisset
+
+@empty($fornecedores[0]['cnpj'])
+    Está vazio 
+@endempty
 {{-- @php 
 
     @if ()
