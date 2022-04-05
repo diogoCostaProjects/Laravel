@@ -1,7 +1,14 @@
 <h3>Fornecedor</h3>
 
 
-
+@isset($fornecedores)
+   Fornecedor: {{$fornecedores[0]['nome']}} <br>
+   Status: {{$fornecedores[0]['status']}} <br>
+   
+   @isset($fornecedores[0]['cnpj'])
+        Cnpj: {{$fornecedores[0]['cnpj']}}
+   @endisset
+@endisset
 {{-- @php 
 
     @if ()
@@ -21,15 +28,5 @@
 @else
     <h3>ainda não há fornecedores</h3>
 @endif --}}
-Fornecedor: {{ $fornecedores[0]['nome'] }} <br/>
-Status:     {{ $fornecedores[0]['status'] }}
 
-@if(!($fornecedores[0]['status']=='S'))
-    <p>Fornecedor Inativo</p>
-@endif
-
-{{-- Executa se retorno for false no caso não for S --}}
-@unless($fornecedores[0]['status']=='S')
-<p>Fornecedor Inativo</p>
-@endunless
 {{-- @unless verifica o false na condição --}}
