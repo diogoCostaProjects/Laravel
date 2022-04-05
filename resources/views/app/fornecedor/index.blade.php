@@ -1,12 +1,23 @@
-<h3>Fornecedor</h3>
+<h3>Fornecedores</h3>
 
 
-@isset($fornecedores)
+{{-- @isset($fornecedores)
    Fornecedor: {{$fornecedores[0]['nome']}} <br>
    Status: {{$fornecedores[0]['status']}} <br>
-   {{-- Uso de if ternário no blade --}}
+   {{-- Uso de if ternário no blade -
    Cnpj: {{$fornecedores[0]['cnpj'] ?? 'Dado não foi preenchido'}}
-@endisset
+@endisset --}}
+
+@forelse($fornecedores as $indice => $fornecedor)
+   Fornecedor: {{$fornecedor['nome']}} <br>
+   Status: {{$fornecedor['status']}} <br>
+   Cnpj: {{$fornecedor['cnpj'] ?? 'Dado não foi preenchido'}} <br>
+   <hr>
+@empty
+    Não existem fornecedores cadastrados
+@endforelse
+
+
 
 {{-- @switch($varteste)
     @case(1)
@@ -23,7 +34,7 @@
 {{-- @empty($fornecedores[0]['cnpj'])
     Está vazio 
 @endempty --}}
-@php $i = 0 @endphp
+{{-- @php $i = 0 @endphp
 @while($i < 2)
    Fornecedor: {{$fornecedores[0]['nome']}} <br>
    Status: {{$fornecedores[0]['status']}} <br>
@@ -31,7 +42,7 @@
    <hr>
 
    @php $i ++ @endphp
-@endwhile
+@endwhile --}}
 
 {{-- @php 
 

@@ -20,6 +20,10 @@ class FornecedorController extends Controller
             ]
         ];
 
+        $fornecedores = [
+            
+        ];
+
         $varteste = 0;
         $data = ['fornecedores'=> $fornecedores, 'varteste'=>$varteste];
 
