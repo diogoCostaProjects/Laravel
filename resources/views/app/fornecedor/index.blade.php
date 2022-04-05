@@ -14,10 +14,22 @@
 {{-- @dd($fornecedores)  --}}
 
 
-@if (count($fornecedores) > 0 && count($fornecedores) < 10)
+{{-- @if (count($fornecedores) > 0 && count($fornecedores) < 10)
     <h3>Tem fornecedores</h3>
 @elseif(count($fornecedores) > 10)
     <h3>Tem vários fornecedores</h3>
 @else
     <h3>ainda não há fornecedores</h3>
+@endif --}}
+Fornecedor: {{ $fornecedores[0]['nome'] }} <br/>
+Status:     {{ $fornecedores[0]['status'] }}
+
+@if(!($fornecedores[0]['status']=='S'))
+    <p>Fornecedor Inativo</p>
 @endif
+
+{{-- Executa se retorno for false no caso não for S --}}
+@unless($fornecedores[0]['status']=='S')
+<p>Fornecedor Inativo</p>
+@endunless
+{{-- @unless verifica o false na condição --}}

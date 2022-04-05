@@ -9,19 +9,7 @@ class FornecedorController extends Controller
     public function index(){
 
         $fornecedores = [
-            'Diogo',
-            'Diogo',
-            'Diogo',
-            'Diogo',
-            'Diogo',
-            'Diogo',
-            'Diogo',
-            'Diogo',
-            'Diogo',
-            'Diogo',
-            'Diogo',
-            'Diogo',
-            'Diogo'
+            0 => ['nome' => 'diogo', 'status'=>'N']
         ];
         $data = ['fornecedores'=> $fornecedores];
 
