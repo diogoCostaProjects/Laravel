@@ -12,6 +12,19 @@
    Fornecedor: {{$fornecedor['nome']}} <br>
    Status: {{$fornecedor['status']}} <br>
    Cnpj: {{$fornecedor['cnpj'] ?? 'Dado não foi preenchido'}} <br>
+   
+   {{-- Pega a iteração e verifica se é o primeiro indice do array --}}
+   @if($loop->first) 
+        Esta e a primeira iteração
+   @endif
+
+   @if($loop->last) 
+        Esta e a última iteração
+
+        <br><br>
+   <strong>Total de registros: {{$loop->count}}</strong>
+   @endif
+   
    <hr>
 @empty
     Não existem fornecedores cadastrados

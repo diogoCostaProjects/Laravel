@@ -17,13 +17,18 @@ class FornecedorController extends Controller
             1 => [
                 'nome' => 'barbara', 
                 'status'=>'s'                
+            ],
+            2 => [
+                'nome' => 'viuma', 
+                'status'=>'s'                
+            ],
+            3 => [
+                'nome' => 'shuri', 
+                'status'=>'s'                
             ]
         ];
 
-        $fornecedores = [
-            
-        ];
-
+        
         $varteste = 0;
         $data = ['fornecedores'=> $fornecedores, 'varteste'=>$varteste];
 
