@@ -19,7 +19,9 @@ class FornecedorController extends Controller
                 'status'=>'s'                
             ]
         ];
-        $data = ['fornecedores'=> $fornecedores];
+
+        $varteste = 0;
+        $data = ['fornecedores'=> $fornecedores, 'varteste'=>$varteste];
 
         
 
