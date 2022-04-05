@@ -21,6 +21,8 @@ class FornecedorController extends Controller
         ];
         $data = ['fornecedores'=> $fornecedores];
 
+        
+
         return view('app.fornecedor.index', $data);
     }
 }

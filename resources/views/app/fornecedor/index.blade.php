@@ -4,15 +4,13 @@
 @isset($fornecedores)
    Fornecedor: {{$fornecedores[0]['nome']}} <br>
    Status: {{$fornecedores[0]['status']}} <br>
-   
-   @isset($fornecedores[0]['cnpj'])
-        Cnpj: {{$fornecedores[0]['cnpj']}}
-   @endisset
+   Cnpj: {{$fornecedores[0]['cnpj'] ?? 'Dado não foi preenchido'}}
 @endisset
 
-@empty($fornecedores[0]['cnpj'])
+{{-- @empty($fornecedores[0]['cnpj'])
     Está vazio 
-@endempty
+@endempty --}}
+
 {{-- @php 
 
     @if ()
